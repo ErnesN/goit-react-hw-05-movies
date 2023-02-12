@@ -3,12 +3,17 @@
   display: flex;
   justify-content: left;
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .link {
   text-decoration: none;
-  color: darkgreen;
+  color: lightgreen;
   padding: 10px 15px;
   font-family: 'Times New Roman', Times, serif;
+}
+.link:global(.active) {
+  font-weight: bold;
+  color: darkgreen;
+  border-bottom: 4px solid darkgreen;
 }
