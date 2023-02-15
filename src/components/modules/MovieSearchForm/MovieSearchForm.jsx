@@ -15,32 +15,26 @@ const MovieSearchForm = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (search.trim() === '') {
-      Notify.info('Please enter what to search for!');
-      return;
+      return Notify.info('Будь ласка, введіть, що шукати!');
     }
     onSubmit(search);
     setSearch('');
   };
 
   return (
-    <header className={styles.searchbar}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <button type="submit" className={styles.button} onSubmit={handleSubmit}>
-          <span className={styles.button__label}>Search</span>
-        </button>
-
-        <input
-          className={styles.input}
-          value={search}
-          onChange={handleChange}
-          name="search"
-          placeholder="Введіть назву фільма для пошуку"
-          required
-        />
-      </form>
-    </header>
+    <form onSubmit={handleSubmit}>
+      <input
+        className={styles.searchInput}
+        name="search"
+        value={search}
+        onChange={handleChange}
+        placeholder="Введіть назву фільму для пошуку"
+      />
+      <button>Пошук</button>
+    </form>
   );
 };
+
 export default MovieSearchForm;
 
 MovieSearchForm.propTypes = {

@@ -13,25 +13,25 @@ const HomePage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const getTrandingMovie = async () => {
+    const getTrendingFilms = async () => {
       try {
         setLoading(true);
         const { data } = await fetchTrendingFilms();
         setItems(data.results);
       } catch (error) {
-        setError(error.massage);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
     };
-    getTrandingMovie();
+    getTrendingFilms();
   }, []);
 
   return (
     <div>
       <h2 className={styles.title}>У тренді сьогодні</h2>
       {loading && <Loader />}
-      {error && <p>{error.massage}</p>}
+      {error && <p>{error.message}</p>}
       {items.length > 0 && (
         <MovieList items={items} loading={loading} error={error} />
       )}
