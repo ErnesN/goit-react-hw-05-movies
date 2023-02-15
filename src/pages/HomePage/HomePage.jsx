@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { fetchTrendingFilms } from 'components/services/themoviedb-api';
 
-import MovieList from 'components/Loader/Loader';
+import MovieList from 'components/modules/MovieList/MovieList';
 import Loader from 'components/Loader/Loader';
 
 import styles from './home-page.module.scss';
